@@ -64,7 +64,7 @@ The other variables specify the borders of the box:
 
 !!!!!!!!!!!!!
 < TOPC='!'  >
-< LFTC='>'  >
+< LFTC='<'  >
 < RIGC='>'  >
 < BOTC='¡'  >
 ¡¡¡¡¡¡¡¡¡¡¡¡¡
