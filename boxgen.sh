@@ -13,7 +13,6 @@ ERR=0
 
 # vars
 PAD=0
-PAD=0
 TOPC='-'
 LFTC='|'
 RIGC='|'
