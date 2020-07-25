@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ------------------------------------------------
-# | Name: ASCII Art textbox generator script     |
-# | Version: 0.1                                 |
+# | Name: BoxGen                                 |
+# | Version: 0.2                                 |
 # | Author: RandomContributor                    |
 # | Use case: Source code headers like this one. |
 # | Status: Unfinished                           |
@@ -12,11 +12,12 @@
 ERR=0
 
 # vars
-PAD=0    # padding
-TOPC='-'  # ceiling character
-LFTC='|'  # left wall character
-RIGC='|'  # right wall character
-BOTC='-'  # floor character
+PAD=0
+PAD=0
+TOPC='-'
+LFTC='|'
+RIGC='|'
+BOTC='-'
 
 # set the maximum length
     x=0
@@ -34,7 +35,7 @@ T=$(x=0;while :;do ((x=x+1));echo -n "${TOPC}";[[ "$x" == "$((LNG+1))" ]] && bre
 P=$(echo -n "${LFTC}";x=0;while :;do ((x=x+1));echo -n " ";[[ "$x" == "$((LNG-1))" ]] && break;done;echo -n "${RIGC}")
 
 echo "${T}" # draw ceiling
-(x=0;while :;do ((x=x+1));[[ "$x" -ge "${PAD}" ]] && break;echo "${P}";done) # draw walls
+(x=0;while :;do ((x=x+1));[[ "$x" -ge "$((PAD+1))" ]] && break;echo "${P}";done) # draw walls
 
 # insert the text into the walls, fucky escapes
 
@@ -52,7 +53,7 @@ for i in "$@";do
 done
 )
 
-(x=0;while :;do ((x=x+1));[[ "$x" -ge "${PAD}" ]] && break;echo "${P}";done) # draw walls
+(x=0;while :;do ((x=x+1));[[ "$x" -ge "$((PAD+1))" ]] && break;echo "${P}";done) # draw walls
 echo "${B}" # draw floor
 
 exit "${ERR}"
